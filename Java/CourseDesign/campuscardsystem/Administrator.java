@@ -22,7 +22,7 @@ class Administrator extends User {
 
     public void confirmUnblock(Student student) {
         if (student != null) {
-            student.cancelLoss();
+            student.lostConfirmed = false;
             System.out.println("学生解挂已确认：" + student.studentId);
         }
     }

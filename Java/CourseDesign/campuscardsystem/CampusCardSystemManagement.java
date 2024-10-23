@@ -167,10 +167,9 @@ public class CampusCardSystemManagement {
                                 studentId = scanner.nextLine();
                                 for (Student student : students) {
                                     if (student.studentId.equals(studentId)) {
-                                        if (student.isLost) {
+                                        if (student.lostConfirmed) {
                                             admin.confirmUnblock(student);
-                                            System.out.println("学生解挂已确认：" + studentId);
-                                        } else if (student.isLost){
+                                        } else if (!student.lostConfirmed){
                                             System.out.println("该用户没有待处理的解挂申请。");
                                         } else {
                                             System.out.println ("用户不存在。");

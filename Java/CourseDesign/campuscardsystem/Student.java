@@ -8,6 +8,7 @@ class Student extends User {
     private List<ConsumptionRecord> consumptionRecords;
     protected boolean isLost;
     protected boolean lostConfirmed;
+    protected boolean registerConfirmed;
 
     public Student(String username, String password, String studentId) {
         super(username, password);
@@ -16,6 +17,7 @@ class Student extends User {
         this.consumptionRecords = new ArrayList<>();
         this.isLost = false;
         this.lostConfirmed = false;
+        this.registerConfirmed = false;
     }
 
     public void recharge(double amount) {
