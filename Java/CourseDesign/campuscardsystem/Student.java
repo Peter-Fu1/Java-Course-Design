@@ -19,7 +19,11 @@ class Student extends User {
     }
 
     public void recharge(double amount) {
-        if (amount > 500) {
+        if (lostConfirmed) {
+            System.out.println("校园卡已挂失，无法进行此操作。");
+            return;
+        }
+        else if (amount > 500) {
             System.out.println("充值金额超过500元限制。");
         } else {
             balance += amount;
@@ -32,7 +36,7 @@ class Student extends User {
             System.out.println("校园卡已挂失，无法进行此操作。");
             return;
         }
-        if (balance < amount) {
+        else if (balance < amount) {
             System.out.println("余额不足，请充值。");
         } else {
             double todayTotal = getTodayConsumptionTotal();
