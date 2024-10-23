@@ -7,6 +7,7 @@ class Student extends User {
     private double balance;
     private List<ConsumptionRecord> consumptionRecords;
     protected boolean isLost;
+    protected boolean lostConfirmed;
 
     public Student(String username, String password, String studentId) {
         super(username, password);
@@ -14,6 +15,7 @@ class Student extends User {
         this.balance = 0;
         this.consumptionRecords = new ArrayList<>();
         this.isLost = false;
+        this.lostConfirmed = false;
     }
 
     public void recharge(double amount) {
@@ -26,7 +28,7 @@ class Student extends User {
     }
 
     public void consume(double amount, String location) {
-        if (isLost) {
+        if (lostConfirmed) {
             System.out.println("校园卡已挂失，无法进行此操作。");
             return;
         }

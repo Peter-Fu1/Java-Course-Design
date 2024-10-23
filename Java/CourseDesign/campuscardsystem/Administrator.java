@@ -14,7 +14,7 @@ class Administrator extends User {
 
     public void confirmLoss(Student student) {
         if (student != null) {
-            student.reportLoss();
+            student.lostConfirmed = true;
             System.out.println("学生挂失已确认：" + student.studentId);
         }
     }
