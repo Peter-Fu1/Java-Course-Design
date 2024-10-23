@@ -46,8 +46,13 @@ public class CampusCardSystemManagement {
                 Student loggedInStudent = null;
                 for (Student student : students) {
                     if (student.login(username, password)) {
-                        loggedInStudent = student;
-                        break;
+                        if(student.registerConfirmed){
+                            loggedInStudent = student;
+                            break;
+                        } else {
+                            System.out.println ("您的用户尚未通过审核。");
+                            break;
+                        }
                     }
                 }
 

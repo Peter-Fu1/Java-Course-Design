@@ -9,6 +9,7 @@ class Administrator extends User {
     }
 
     public void approveRegistration(Student student) {
+        student.registerConfirmed = true;
         System.out.println("学生注册已审核通过：" + student.studentId);
     }
 
