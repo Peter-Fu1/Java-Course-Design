@@ -70,7 +70,7 @@ class Student extends User {
     public void viewConsumptionRecords(Date startDate, Date endDate, String location) {
         for (ConsumptionRecord record : consumptionRecords) {
             if ((record.getDate().after(startDate) || record.getDate().equals(startDate)) && (record.getDate().before(endDate) || record.getDate().equals(endDate)) && record.getLocation().equals(location)) {
-                System.out.println(record);
+                System.out.println("用户名: " + username + ", 消费记录: " + record);
             }
         }
     }
